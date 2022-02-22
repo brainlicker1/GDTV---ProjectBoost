@@ -13,12 +13,27 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        MovementInput();
+        ThrustInput();
+        RotateInput();
     }
-     void MovementInput(){
+     void ThrustInput(){
 
 
+        if(Input.GetKey(KeyCode.Space)) {
 
+            Debug.Log("grats you have opposable thumbs");
+        }
+        
 
+     }
+     void RotateInput(){
+
+        if(Input.GetKey(KeyCode.A)){
+            //rotate left
+        }
+        else if(Input.GetKey(KeyCode.D)){
+
+            //rotate right
+        }
      }
 }
