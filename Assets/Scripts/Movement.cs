@@ -28,7 +28,7 @@ public class Movement : MonoBehaviour
 
 
         if(Input.GetKey(KeyCode.Space)) {
-            rb.AddRelativeForce(0,thrustRate,0);
+            rb.AddRelativeForce(Vector3.up * thrustRate * Time.deltaTime);
             Debug.Log("grats you have opposable thumbs");
         }
         
@@ -36,14 +36,20 @@ public class Movement : MonoBehaviour
      }
      void RotateInput(){
 
-        if(Input.GetKey(KeyCode.A)){
+        if(Input.GetKey(KeyCode.A))
+        {
             //rotate left
-            rb.AddRelativeTorque(-leftTorque,0,0);
+            RotateRocket(leftTorque);
         }
         else if(Input.GetKey(KeyCode.D)){
 
             //rotate right
-            rb.AddRelativeTorque(rightTorque,0,0);
+           RotateRocket(-rightTorque);
         }
      }
+
+          void RotateRocket(float rotationThisFrame)
+    {   
+        rb.transform.Rotate(Vector3.forward * rotationThisFrame * Time.deltaTime);
+    }
 }
