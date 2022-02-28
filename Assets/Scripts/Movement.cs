@@ -34,7 +34,7 @@ public class Movement : MonoBehaviour
             if(!clip.isPlaying){PlaySoundClip();}
             else{clip.Stop();}
             
-            Debug.Log("grats you have opposable thumbs");
+           // Debug.Log("grats you have opposable thumbs");
         }
         
 
