@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 public class ColiderDetect : MonoBehaviour
-{
+{   [SerializeField] float delay = 5f;
    private void OnCollisionEnter(Collision other) {
         
+        
+         
         switch (other.gameObject.tag)
         {   
             case "Start":
@@ -13,25 +15,35 @@ public class ColiderDetect : MonoBehaviour
              break;
             case "Finish":
             Debug.Log("Eat more shit");
-            LoadNextScene();
+            LandingComplete();
             break;
             case "Hazard":
             Debug.Log("Get guud bish");
-            LoadScene();
+            StartCrashSequence();
             break;
             default: 
             Debug.Log("Eat all the shit");
-            LoadScene();
+            StartCrashSequence();
             break;
         }
 
    }
-
+    void StartCrashSequence(){
+        GetComponent<Movement>().enabled = false;
+        Invoke("LoadScene", delay);
+        
+    }
    void LoadScene(){
 
        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
        SceneManager.LoadScene(currentSceneIndex);
 
+
+   }
+
+   void LandingComplete(){
+       GetComponent<Movement>().enabled = false;
+       Invoke("LoadNextScene", delay);
 
    }
    void LoadNextScene(){
@@ -42,6 +54,7 @@ public class ColiderDetect : MonoBehaviour
         if(nextSceneIndex == SceneManager.sceneCountInBuildSettings){
             nextSceneIndex = 0;
         }
+        
        SceneManager.LoadScene(nextSceneIndex);
 
    }
