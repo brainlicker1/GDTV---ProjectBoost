@@ -281,7 +281,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 885244490}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -43.46122, y: 3.1577895, z: -9.726503}
+  m_LocalPosition: {x: -43.46122, y: 3.1577895, z: -11.837843}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1131255223}
@@ -366,7 +366,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -43.46122, y: 3.1577895, z: -9.726503}
+  m_LocalPosition: {x: -43.46122, y: 3.1577895, z: -11.837843}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -461,7 +461,7 @@ MonoBehaviour:
   m_TargetMovementOnly: 1
   m_ScreenX: 0.5
   m_ScreenY: 0.5
-  m_CameraDistance: 9.88866
+  m_CameraDistance: 12
   m_DeadZoneWidth: 0
   m_DeadZoneHeight: 0
   m_DeadZoneDepth: 0
@@ -521,24 +521,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1910530069 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3838079839744618396, guid: ceca65c4f3c11fb4e867739724015681, type: 3}
-  m_PrefabInstance: {fileID: 4126466633272412696}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1910530070
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1910530069}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: edd97572acbf06b4795babe146328f3b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  delay: 2
 --- !u!1001 &85870775747405462
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -660,6 +642,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1811019752, guid: ceca65c4f3c11fb4e867739724015681, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1910530070, guid: ceca65c4f3c11fb4e867739724015681, type: 3}
+      propertyPath: crash
+      value: 
+      objectReference: {fileID: 8300000, guid: 8cf1a6156dea0e1468839e90fb55dcc2, type: 3}
+    - target: {fileID: 1910530070, guid: ceca65c4f3c11fb4e867739724015681, type: 3}
+      propertyPath: success
+      value: 
+      objectReference: {fileID: 8300000, guid: ea2bfd495a3da6c40bfbe38244defe35, type: 3}
     - target: {fileID: 3838079839744618396, guid: ceca65c4f3c11fb4e867739724015681, type: 3}
       propertyPath: m_Name
       value: Dildo Rocket
@@ -708,6 +702,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7545129228771959501, guid: ceca65c4f3c11fb4e867739724015681, type: 3}
+      propertyPath: explode
+      value: 
+      objectReference: {fileID: 8300000, guid: 8cf1a6156dea0e1468839e90fb55dcc2, type: 3}
+    - target: {fileID: 7545129228771959501, guid: ceca65c4f3c11fb4e867739724015681, type: 3}
+      propertyPath: mainEngine
+      value: 
+      objectReference: {fileID: 8300000, guid: 0be0d21a58f673a4e99b6972595872e0, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ceca65c4f3c11fb4e867739724015681, type: 3}
 --- !u!1001 &6729008443251679136

@@ -4,7 +4,13 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class ColiderDetect : MonoBehaviour
 {   [SerializeField] float delay = 5f;
-   private void OnCollisionEnter(Collision other) {
+    [SerializeField] AudioClip success;
+    [SerializeField] AudioClip crash;
+    AudioSource audioSource;
+     void Start() {
+          audioSource = GetComponent<AudioSource>();
+        }
+      void OnCollisionEnter(Collision other) {
         
         
          
@@ -29,7 +35,9 @@ public class ColiderDetect : MonoBehaviour
 
    }
     void StartCrashSequence(){
+    
         GetComponent<Movement>().enabled = false;
+        audioSource.PlayOneShot(crash);
         Invoke("LoadScene", delay);
         
     }
@@ -43,6 +51,7 @@ public class ColiderDetect : MonoBehaviour
 
    void LandingComplete(){
        GetComponent<Movement>().enabled = false;
+       audioSource.PlayOneShot(success);
        Invoke("LoadNextScene", delay);
 
    }

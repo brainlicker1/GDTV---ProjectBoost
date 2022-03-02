@@ -9,7 +9,8 @@ public class Movement : MonoBehaviour
     [SerializeField] float rightTorque = 1f;
     Rigidbody rb;
      AudioSource clip;
-
+    [SerializeField] AudioClip mainEngine;
+   
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -31,7 +32,8 @@ public class Movement : MonoBehaviour
 
         if(Input.GetKey(KeyCode.Space)) {
             rb.AddRelativeForce(Vector3.up * thrustRate * Time.deltaTime);
-            if(!clip.isPlaying){PlaySoundClip();}
+            if(!clip.isPlaying){
+                PlaySoundClip(mainEngine);}
             else{clip.Stop();}
             
            // Debug.Log("grats you have opposable thumbs");
@@ -58,11 +60,11 @@ public class Movement : MonoBehaviour
             rb.transform.Rotate(Vector3.forward * rotationThisFrame * Time.deltaTime);
             rb.freezeRotation = false;
     }
-    void PlaySoundClip(){
+    void PlaySoundClip(AudioClip audioClip){
 
        
 
-            clip.Play();
+            clip.PlayOneShot( audioClip);
 
 
     }
