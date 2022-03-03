@@ -8,7 +8,7 @@ public class Movement : MonoBehaviour
     [SerializeField] float leftTorque = 1f;
     [SerializeField] float rightTorque = 1f;
     Rigidbody rb;
-     AudioSource clip;
+    AudioSource clip;
     [SerializeField] AudioClip mainEngine;
    
     private void Awake()
@@ -32,9 +32,10 @@ public class Movement : MonoBehaviour
 
         if(Input.GetKey(KeyCode.Space)) {
             rb.AddRelativeForce(Vector3.up * thrustRate * Time.deltaTime);
-            if(!clip.isPlaying){
-                PlaySoundClip(mainEngine);}
-            else{clip.Stop();}
+            if(clip.isPlaying){clip.Stop();
+                }
+            else{
+            PlaySoundClip(mainEngine);}
             
            // Debug.Log("grats you have opposable thumbs");
         }

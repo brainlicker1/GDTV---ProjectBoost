@@ -340,6 +340,7 @@ MonoBehaviour:
   thrustRate: 700
   leftTorque: 100
   rightTorque: 100
+  mainEngine: {fileID: 8300000, guid: 0be0d21a58f673a4e99b6972595872e0, type: 3}
 --- !u!54 &313179402
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -366,7 +367,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 91b80e9cbac39c14a9d217b34ed2d115, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -465,3 +466,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delay: 2
+  success: {fileID: 8300000, guid: ea2bfd495a3da6c40bfbe38244defe35, type: 3}
+  crash: {fileID: 8300000, guid: 8cf1a6156dea0e1468839e90fb55dcc2, type: 3}

@@ -7,12 +7,13 @@ public class ColiderDetect : MonoBehaviour
     [SerializeField] AudioClip success;
     [SerializeField] AudioClip crash;
     AudioSource audioSource;
+    bool isTransitioning;
      void Start() {
           audioSource = GetComponent<AudioSource>();
         }
       void OnCollisionEnter(Collision other) {
         
-        
+        if(isTransitioning) { return;}
          
         switch (other.gameObject.tag)
         {   
@@ -32,17 +33,19 @@ public class ColiderDetect : MonoBehaviour
             StartCrashSequence();
             break;
         }
-
+        
    }
     void StartCrashSequence(){
-    
+        isTransitioning = true;
+        audioSource.Stop();
         GetComponent<Movement>().enabled = false;
         audioSource.PlayOneShot(crash);
         Invoke("LoadScene", delay);
         
     }
    void LoadScene(){
-
+       
+       
        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
        SceneManager.LoadScene(currentSceneIndex);
 
@@ -50,13 +53,15 @@ public class ColiderDetect : MonoBehaviour
    }
 
    void LandingComplete(){
+       isTransitioning = true;
+       audioSource.Stop();
        GetComponent<Movement>().enabled = false;
        audioSource.PlayOneShot(success);
        Invoke("LoadNextScene", delay);
 
    }
    void LoadNextScene(){
-
+       
        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
        int nextSceneIndex = currentSceneIndex +1;
 

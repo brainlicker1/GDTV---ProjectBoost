@@ -642,18 +642,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1811019752, guid: ceca65c4f3c11fb4e867739724015681, type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1910530070, guid: ceca65c4f3c11fb4e867739724015681, type: 3}
-      propertyPath: crash
-      value: 
-      objectReference: {fileID: 8300000, guid: 8cf1a6156dea0e1468839e90fb55dcc2, type: 3}
-    - target: {fileID: 1910530070, guid: ceca65c4f3c11fb4e867739724015681, type: 3}
-      propertyPath: success
-      value: 
-      objectReference: {fileID: 8300000, guid: ea2bfd495a3da6c40bfbe38244defe35, type: 3}
     - target: {fileID: 3838079839744618396, guid: ceca65c4f3c11fb4e867739724015681, type: 3}
       propertyPath: m_Name
       value: Dildo Rocket
@@ -702,14 +690,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7545129228771959501, guid: ceca65c4f3c11fb4e867739724015681, type: 3}
-      propertyPath: explode
-      value: 
-      objectReference: {fileID: 8300000, guid: 8cf1a6156dea0e1468839e90fb55dcc2, type: 3}
-    - target: {fileID: 7545129228771959501, guid: ceca65c4f3c11fb4e867739724015681, type: 3}
-      propertyPath: mainEngine
-      value: 
-      objectReference: {fileID: 8300000, guid: 0be0d21a58f673a4e99b6972595872e0, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ceca65c4f3c11fb4e867739724015681, type: 3}
 --- !u!1001 &6729008443251679136
