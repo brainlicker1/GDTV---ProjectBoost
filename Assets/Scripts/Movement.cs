@@ -32,7 +32,7 @@ public class Movement : MonoBehaviour
 
         if(Input.GetKey(KeyCode.Space)) {
             rb.AddRelativeForce(Vector3.up * thrustRate * Time.deltaTime);
-            if(clip.isPlaying){clip.Stop();
+            if(clip.isPlaying){ return;
                 }
             else{
             PlaySoundClip(mainEngine);}
