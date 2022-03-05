@@ -6,10 +6,13 @@ public class ColiderDetect : MonoBehaviour
 {   [SerializeField] float delay = 5f;
     [SerializeField] AudioClip success;
     [SerializeField] AudioClip crash;
-    AudioSource audioSource;
+    [SerializeField] ParticleSystem successParticle;
+    [SerializeField] ParticleSystem crashParticle;
+       AudioSource audioSource;
     bool isTransitioning;
      void Start() {
           audioSource = GetComponent<AudioSource>();
+          
         }
       void OnCollisionEnter(Collision other) {
         
@@ -40,6 +43,7 @@ public class ColiderDetect : MonoBehaviour
         audioSource.Stop();
         GetComponent<Movement>().enabled = false;
         audioSource.PlayOneShot(crash);
+        crashParticle.Play();
         Invoke("LoadScene", delay);
         
     }
@@ -57,6 +61,7 @@ public class ColiderDetect : MonoBehaviour
        audioSource.Stop();
        GetComponent<Movement>().enabled = false;
        audioSource.PlayOneShot(success);
+       successParticle.Play();
        Invoke("LoadNextScene", delay);
 
    }

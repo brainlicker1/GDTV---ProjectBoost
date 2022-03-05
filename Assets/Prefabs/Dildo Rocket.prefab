@@ -340,7 +340,7 @@ MonoBehaviour:
   thrustRate: 700
   leftTorque: 100
   rightTorque: 100
-  mainEngine: {fileID: 8300000, guid: 0be0d21a58f673a4e99b6972595872e0, type: 3}
+  mainEngine: {fileID: 8300000, guid: 62bb19098f180514f9d5332d83f649b0, type: 3}
 --- !u!54 &313179402
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -468,3 +468,5 @@ MonoBehaviour:
   delay: 2
   success: {fileID: 8300000, guid: ea2bfd495a3da6c40bfbe38244defe35, type: 3}
   crash: {fileID: 8300000, guid: 8cf1a6156dea0e1468839e90fb55dcc2, type: 3}
+  successParticle: {fileID: 198631066050499358, guid: 62198a3a5dbb64a4f9e1618929224faa, type: 3}
+  crashParticle: {fileID: 198204746014789312, guid: ab79a37535b979f48b6de56e3a0a5cb0, type: 3}
