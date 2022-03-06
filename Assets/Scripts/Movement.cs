@@ -10,6 +10,9 @@ public class Movement : MonoBehaviour
     Rigidbody rb;
     AudioSource clip;
     [SerializeField] AudioClip mainEngine;
+    [SerializeField] ParticleSystem mainBooster;
+    [SerializeField] ParticleSystem leftBooster;
+    [SerializeField] ParticleSystem rightBooster;
    
     private void Awake()
     {
@@ -32,10 +35,15 @@ public class Movement : MonoBehaviour
 
         if(Input.GetKey(KeyCode.Space)) {
             rb.AddRelativeForce(Vector3.up * thrustRate * Time.deltaTime);
-            if(clip.isPlaying){ return;
+            mainBooster.Play();
+            if(!clip.isPlaying){ 
+                clip.PlayOneShot(mainEngine);
                 }
+                if(!mainBooster.isPlaying) {mainBooster.Stop();}
             else{
-            PlaySoundClip(mainEngine);}
+            clip.Stop();
+            
+            }
             
            // Debug.Log("grats you have opposable thumbs");
         }
@@ -47,12 +55,18 @@ public class Movement : MonoBehaviour
         if(Input.GetKey(KeyCode.A))
         {
             //rotate left
+            leftBooster.Play();
             RotateRocket(leftTorque);
         }
         else if(Input.GetKey(KeyCode.D)){
 
             //rotate right
+            rightBooster.Play();
            RotateRocket(-rightTorque);
+        } 
+        else {
+            leftBooster.Stop();
+            rightBooster.Stop();
         }
      }
 
