@@ -33,44 +33,69 @@ public class Movement : MonoBehaviour
      void ThrustInput(){
 
 
-        if(Input.GetKey(KeyCode.Space)) {
-            rb.AddRelativeForce(Vector3.up * thrustRate * Time.deltaTime);
-            mainBooster.Play();
-            if(!clip.isPlaying){ 
-                clip.PlayOneShot(mainEngine);
-                }
-                if(!mainBooster.isPlaying) {mainBooster.Stop();}
-            else{
-            clip.Stop();
-            
-            }
-            
-           // Debug.Log("grats you have opposable thumbs");
-        }
-        
+        if(Input.GetKey(KeyCode.Space))
+        {
+            Thrust();
 
-     }
-     void RotateInput(){
+            // Debug.Log("grats you have opposable thumbs");
+        }
+
+
+    }
+
+     void Thrust()
+    {
+        rb.AddRelativeForce(Vector3.up * thrustRate * Time.deltaTime);
+        mainBooster.Play();
+        if (!clip.isPlaying)
+        {
+            clip.PlayOneShot(mainEngine);
+        }
+        if (!mainBooster.isPlaying) { mainBooster.Stop(); }
+        else
+        {
+            clip.Stop();
+
+        }
+    }
+
+    void RotateInput(){
 
         if(Input.GetKey(KeyCode.A))
         {
-            //rotate left
-            leftBooster.Play();
-            RotateRocket(leftTorque);
+            RotateLeft();
         }
-        else if(Input.GetKey(KeyCode.D)){
-
-            //rotate right
-            rightBooster.Play();
-           RotateRocket(-rightTorque);
-        } 
-        else {
-            leftBooster.Stop();
-            rightBooster.Stop();
+        else if(Input.GetKey(KeyCode.D))
+        {
+            RotateRight();
         }
-     }
+        else
+        {
+            StopRotation();
+        }
+    }
 
-          void RotateRocket(float rotationThisFrame)
+    private void StopRotation()
+    {
+        leftBooster.Stop();
+        rightBooster.Stop();
+    }
+
+    private void RotateRight()
+    {
+        //rotate right
+        rightBooster.Play();
+        RotateRocket(-rightTorque);
+    }
+
+    private void RotateLeft()
+    {
+        //rotate left
+        leftBooster.Play();
+        RotateRocket(leftTorque);
+    }
+
+    void RotateRocket(float rotationThisFrame)
     {       rb.freezeRotation = true;
             rb.transform.Rotate(Vector3.forward * rotationThisFrame * Time.deltaTime);
             rb.freezeRotation = false;
