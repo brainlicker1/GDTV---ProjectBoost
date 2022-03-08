@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,13 +11,34 @@ public class ColiderDetect : MonoBehaviour
     [SerializeField] ParticleSystem crashParticle;
        AudioSource audioSource;
     bool isTransitioning;
+    bool collisionDisabled = false;
      void Start() {
           audioSource = GetComponent<AudioSource>();
           
         }
-      void OnCollisionEnter(Collision other) {
+
+         void Update()
+        {
+           // RespondToDebugKeys();
+        }
+
+     void RespondToDebugKeys()
+    {
         
-        if(isTransitioning) { return;}
+         if(Input.GetKeyDown(KeyCode.L)) {
+             LoadNextScene();
+
+         }
+         else if(Input.GetKeyDown(KeyCode.C)) {
+
+             collisionDisabled = !collisionDisabled;
+
+         }
+    }
+
+    void OnCollisionEnter(Collision other) {
+        
+        if(isTransitioning || collisionDisabled) { return;}
          
         switch (other.gameObject.tag)
         {   
@@ -65,7 +87,7 @@ public class ColiderDetect : MonoBehaviour
        Invoke("LoadNextScene", delay);
 
    }
-   void LoadNextScene(){
+     public void LoadNextScene(){
        
        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
        int nextSceneIndex = currentSceneIndex +1;
