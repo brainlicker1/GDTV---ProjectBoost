@@ -722,8 +722,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dddf158006bd72d4f83fb7c4f6b9cb77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementVector: {x: 0, y: 0, z: 0}
+  movementVector: {x: 0, y: 2, z: 0}
   movementFactor: 0
+  period: 2
 --- !u!1 &1889990895
 GameObject:
   m_ObjectHideFlags: 0
@@ -928,8 +929,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dddf158006bd72d4f83fb7c4f6b9cb77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementVector: {x: 0, y: 0, z: 0}
+  movementVector: {x: 0, y: 4, z: 0}
   movementFactor: 0
+  period: 2
 --- !u!1 &1968379954
 GameObject:
   m_ObjectHideFlags: 0
@@ -1038,8 +1040,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dddf158006bd72d4f83fb7c4f6b9cb77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementVector: {x: 0, y: 0, z: 0}
+  movementVector: {x: 0, y: 5, z: 0}
   movementFactor: 0
+  period: 2
 --- !u!1001 &85870775747405462
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1104,14 +1107,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1026860466, guid: f3d4c5eadd55f604681ec629c3e2cb9d, type: 3}
-      propertyPath: movementVector.x
-      value: 2.87
-      objectReference: {fileID: 0}
-    - target: {fileID: 1026860466, guid: f3d4c5eadd55f604681ec629c3e2cb9d, type: 3}
-      propertyPath: movementVector.z
-      value: 2.71
-      objectReference: {fileID: 0}
     - target: {fileID: 2744968770038149715, guid: f3d4c5eadd55f604681ec629c3e2cb9d, type: 3}
       propertyPath: m_RootOrder
       value: 7
