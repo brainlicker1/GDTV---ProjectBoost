@@ -722,7 +722,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dddf158006bd72d4f83fb7c4f6b9cb77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementVector: {x: 0, y: 2, z: 0}
+  movementVector: {x: 0, y: 2, z: 2}
   movementFactor: 0
   period: 2
 --- !u!1 &1889990895
@@ -1040,7 +1040,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dddf158006bd72d4f83fb7c4f6b9cb77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementVector: {x: 0, y: 5, z: 0}
+  movementVector: {x: 0, y: 5, z: 2}
   movementFactor: 0
   period: 2
 --- !u!1001 &85870775747405462

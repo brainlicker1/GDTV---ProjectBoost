@@ -21,7 +21,7 @@ public class ObsticleMovement : MonoBehaviour
     }
 
     private void SinMovment()
-    {
+    {   if( period <= Mathf.Epsilon ) {return;}
         float cycles = Time.time / period;
         const float tau = Mathf.PI * 2;
         float rawSignWave = Mathf.Sin(cycles * tau);
