@@ -13,7 +13,7 @@ public class Movement : MonoBehaviour
     [SerializeField] ParticleSystem mainBooster;
     [SerializeField] ParticleSystem leftBooster;
     [SerializeField] ParticleSystem rightBooster;
-    ColiderDetect cd;
+    //ColiderDetect cd;
    
     private void Awake()
     {
@@ -30,6 +30,7 @@ public class Movement : MonoBehaviour
     {
         ThrustInput();
         RotateInput();
+        QuitGame();
     }
      void ThrustInput(){
 
@@ -59,14 +60,7 @@ public class Movement : MonoBehaviour
 
         }
     }
-     void CheatKeys() {
-
-         if(Input.GetKeyDown(KeyCode.L)) {
-             cd.LoadNextScene();
-
-         }
-
-     }
+     
     void RotateInput(){
 
         if(Input.GetKey(KeyCode.A))
@@ -113,6 +107,18 @@ public class Movement : MonoBehaviour
        
 
             clip.PlayOneShot( audioClip);
+
+
+    }
+    void QuitGame(){
+
+
+        if(Input.GetKeyDown(KeyCode.Escape)) {
+            Debug.Log("Hasta Laego Muchaco");
+            Application.Quit();
+
+
+        }
 
 
     }
